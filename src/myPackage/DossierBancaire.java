@@ -10,12 +10,13 @@ public class DossierBancaire {
 		epargne = new Epargne(0);
 	}
 
-	// Dépôt de 40% du solde sur le compte Courant et 60% sur le compte Epargne
+	// Dépôt de 40% d'une valeur sur le compte Courant et 60% sur le compte Epargne
 	public void deposer(double value) {
 		courant.setSolde(value * 0.4);
 		epargne.setSolde(value * 0.6);
 	}
 
+	// Récupération et addition des soldes de tous les comptes
 	public double getSolde() {
 		return courant.getSolde() + epargne.getSolde();
 	}
