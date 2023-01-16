@@ -2,6 +2,7 @@ package myPackage;
 
 public class DossierBancaire {
 
+	// On utilise l'interface Compte
 	private Compte epargne;
 	private Compte courant;
 
