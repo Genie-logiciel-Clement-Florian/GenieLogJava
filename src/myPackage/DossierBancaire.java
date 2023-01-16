@@ -2,9 +2,10 @@ package myPackage;
 
 public class DossierBancaire {
 
-	private Epargne epargne;
-	private Courant courant;
+	private Compte epargne;
+	private Compte courant;
 
+	// Constructeur, initialisation des différents comptes
 	public DossierBancaire() {
 		courant = new Courant(0);
 		epargne = new Epargne(0);
