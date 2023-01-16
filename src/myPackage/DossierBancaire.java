@@ -1,16 +1,22 @@
 package myPackage;
 
 public class DossierBancaire {
+
+	private Courant courant;
+
+	public DossierBancaire() {
+		courant = new Courant(0);
+	}
 	
-	//Constructeur
-    public DossierBancaire()
+	public void deposer(double value)
     {
-    	m_solde=0;
+    	courant.setSolde(value);
     }
 
-    public void deposer(double value) {m_solde+=value;}
-    public double get_solde() {return m_solde;}
-    public void remunerer() {}
-	
-    private double m_solde;
+	public double getSolde() {
+		return courant.getSolde();
+	}
+
+	public void remunerer() {
+	}
 }
