@@ -20,6 +20,7 @@ public class DossierBancaire {
 		return courant.getSolde() + epargne.getSolde();
 	}
 
+	// Rémunération du compte Epargne de 3.4%
 	public void remunerer() {
 		epargne.setSolde(epargne.getSolde() * 0.034);
 	}
