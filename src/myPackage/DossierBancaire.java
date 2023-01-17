@@ -27,4 +27,11 @@ public class DossierBancaire {
 	public void remunerer() {
 		epargne.setSolde(epargne.getSolde() * 0.034);
 	}
+	
+	public void retirer(double val) throws Exception
+    {
+    	if (courant.getSolde() < val)
+    	    throw new Exception("Solde du compte courant insuffisant");
+    	else courant.setSolde(-val);
+    }
 }
