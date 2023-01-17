@@ -57,4 +57,10 @@ public class TestsDossierBancaire {
 		assertEquals(dossier.getSolde(), courant.getSolde() + epargne.getSolde(), 0.01);
 	}
 
+	@Test(expected = Exception.class)
+	public void test_retirer() throws Exception {
+		DossierBancaire dossier = new DossierBancaire();
+		dossier.retirer(10);
+	}
+
 }
