@@ -23,15 +23,23 @@ public class DossierBancaire {
 		return courant.getSolde() + epargne.getSolde();
 	}
 
+	public double getSoldeCourant() {
+		return courant.getSolde();
+	}
+
+	public double getSoldeEpargne() {
+		return epargne.getSolde();
+	}
+
 	// Rémunération du compte Epargne de 3.4%
 	public void remunerer() {
 		epargne.setSolde(epargne.getSolde() * 0.034);
 	}
-	
-	public void retirer(double val) throws Exception
-    {
-    	if (courant.getSolde() < val)
-    	    throw new Exception("Solde du compte courant insuffisant");
-    	else courant.setSolde(-val);
-    }
+
+	public void retirer(double val) throws Exception {
+		if (courant.getSolde() < val)
+			throw new Exception("Solde du compte courant insuffisant");
+		else
+			courant.setSolde(-val);
+	}
 }
