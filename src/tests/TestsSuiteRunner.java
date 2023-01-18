@@ -9,9 +9,11 @@ public class TestsSuiteRunner {
 	public static void main(String[] args) {
 
 		Result result = JUnitCore.runClasses(TestsSuite.class);
-		
-		for (Failure fail : result.getFailures()) System.out.println(fail.toString());
-		
-		if (result.wasSuccessful()) System.out.println("All tests finished successfully...");
+
+		for (Failure fail : result.getFailures())
+			System.out.println(fail.toString());
+
+		if (result.wasSuccessful())
+			System.out.println("All tests finished successfully...");
 	}
 }

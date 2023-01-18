@@ -20,41 +20,33 @@ public class TestsDossierBancaire {
 
 		Epargne epargne = new Epargne(0);
 		assertEquals(0, epargne.getSolde(), 0);
-
-		assertEquals(dossier.getSolde(), courant.getSolde(), 0);
-		assertEquals(dossier.getSolde(), epargne.getSolde(), 0);
-		assertEquals(0, dossier.getSolde() + courant.getSolde() + epargne.getSolde(), 0);
 	}
 
 	@Test
 	public void test_deposer() {
 		DossierBancaire dossier = new DossierBancaire();
-		Courant courant = new Courant(0);
-		Epargne epargne = new Epargne(0);
 
 		dossier.deposer(100);
 
 		assertEquals(100, dossier.getSolde(), 0);
-		assertEquals(40, courant.getSolde(), 0);
-		assertEquals(60, epargne.getSolde(), 0);
+		assertEquals(40, dossier.getSoldeCourant(), 0);
+		assertEquals(60, dossier.getSoldeEpargne(), 0);
 
-		assertEquals(dossier.getSolde(), courant.getSolde() + epargne.getSolde(), 0);
+		assertEquals(dossier.getSolde(), dossier.getSoldeCourant() + dossier.getSoldeEpargne(), 0);
 	}
 
 	@Test
 	public void test_remunerer() {
 		DossierBancaire dossier = new DossierBancaire();
-		Courant courant = new Courant(0);
-		Epargne epargne = new Epargne(0);
 
 		dossier.deposer(100);
 		dossier.remunerer();
 
 		assertEquals(102.04, dossier.getSolde(), 0.01);
-		assertEquals(40, courant.getSolde(), 0.01);
-		assertEquals(62.04, epargne.getSolde(), 0.01);
+		assertEquals(40, dossier.getSoldeCourant(), 0.01);
+		assertEquals(62.04, dossier.getSoldeEpargne(), 0.01);
 
-		assertEquals(dossier.getSolde(), courant.getSolde() + epargne.getSolde(), 0.01);
+		assertEquals(dossier.getSolde(), dossier.getSoldeCourant() + dossier.getSoldeEpargne(), 0.01);
 	}
 
 	@Test(expected = Exception.class)

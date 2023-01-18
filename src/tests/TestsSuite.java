@@ -4,10 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({
-	TestsDossierBancaire.class
-})
+@Suite.SuiteClasses({ TestsDossierBancaire.class })
 
-public class TestsSuite {  
-	}
-
+public class TestsSuite {
+}

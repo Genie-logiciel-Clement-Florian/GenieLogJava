@@ -15,7 +15,7 @@ public class Epargne implements Compte {
 
 	@Override
 	public void setSolde(double solde) {
-		solde += solde;
+		this.solde += solde;
 	}
 
 }
